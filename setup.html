@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="mt.Vicuna HTML5 theme : mt.Vicuna HTML5 theme" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="website/stylesheets/stylesheet.css">
+
+    <title>mt.Vicuna HTML5 theme - 全般設定モジュールテンプレートでの各種設定について</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5">View on GitHub</a>
+
+          <h1 id="project_title"><a href="./">mt.Vicuna HTML5 theme</a></h1>
+          <h2 id="project_tagline">mt.Vicuna HTML5 themeの専用ページとなります．</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5/archive/v1.0.0.zip">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5/archive/v1.0.0.tar.gz">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>全般設定モジュールテンプレートでの各種設定について</h1>
+
+<h2>全般設定モジュールテンプレートって？</h2>
+
+<p>以前のmt.Vicunaにはなかったモジュールテンプレートで，通常各種テンプレートを行ったり来たりして変更していた項目の一部について，一括で設定できるようにひとまとめにしてしまおう…という，日々ずぼらな製作者の超個人的な意図により制作されたものだったりします(苦笑)．</p>
+
+<h2>設定項目と設定方法について</h2>
+
+<p>まず，全般設定テンプレートを開くと，先頭から10行ぐらいにわたって，以下の様な設定が並んでいると思います．</p>
+
+<pre><code>&lt;MTSetVars&gt;
+    jquery=1
+    eyech=0
+    GA_trackid=0
+
+    CA_entry=0
+    DM_entry=0
+
+    snsb=0
+    fbadmin=0
+    bfbap=0
+    btwit=0
+    bgpls=0
+    bhatb=0
+    bmixi=0
+&lt;/MTSetVars&gt;
+</code></pre>
+
+<p><code>&lt;MTSetVars&gt;</code>から<code>&lt;/MTSetVars&gt;</code>の中に書かれているのが，設定する項目となります．</p>
+
+<p>1つずつ解説していきます．</p>
+
+<h3>
+<a name="user-content-jquery" class="anchor" href="#jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>jquery</h3>
+
+<p>ここではJqueryスクリプトを使用するかを設定します．1で使用する，0で使用しないとなります．</p>
+
+<p>実はJqueryスクリプトを使用する場合には，スマートフォン用のメニュー表示用のCSSも自動で読み込むようになっていますので，できるだけ使用するほうがいいと思われます．</p>
+
+<p>初期設定では1(使用する)となっています．</p>
+
+<h3><a name="user-content-eyech" class="anchor" href="#eyech" aria-hidden="true"><span class="octicon octicon-link"></span></a>eyech</h3>
+
+<p>mt.Vicunaテンプレート内で<code>&lt;body&gt;</code>タグで使われるアイキャッチクラスの設定をします．</p>
+
+<ul class="task-list">
+<li>0: 使用しない</li>
+<li>1: ヘッダー部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-h"&gt;</code>)</li>
+<li>2: ヘッダー部分にハイパーリンクとしてのアイキャッチ画像を適用する(<code>&lt;body class="eye-hb"&gt;</code>)</li>
+<li>3: #contentの先頭部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-c"&gt;</code>)</li>
+<li>4: #mainの先頭部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-m"&gt;</code>)</li>
+<li>5: #utilitiesの直前部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-u"&gt;</code>)</li>
+</ul><p>なお，5については，style5-futureとstyle5-bazooka限定のアイキャッチクラスとなっていまして，しかも2カラムの場合にしか適用されないようになっています．</p>
+
+<p>初期設定は0(使用しない)となっています．</p>
+
+<p>アイキャッチとして使用する画像の登録方法については，インデックステンプレートのスタイルシート内に書かれていますが，アイテムとして画像を登録する際に，タグに「@eyech」とつけて再構築(登録)することにより，自動でアイキャッチ画像として指定するようになっています．</p>
+
+<p>ただし，eyech変数で1以上を指定して，なおかつ再構築がされていないと表示すらされませんので注意してください．</p>
+
+<h3><a name="user-content-ga_trackid" class="anchor" href="#ga_trackid" aria-hidden="true"><span class="octicon octicon-link"></span></a>GA_trackid</h3>
+
+<p>Google Analyticsによるアクセス解析を使用したい場合に使用します．</p>
+
+<p>ここにトラッキングID(UA-数字8桁-数字1桁)を記入しておけば，メインインデックス，アーカイブインデックス，ブログ記事，カテゴリーリスト，年別・月別アーカイブ，検索結果画面でのGoogle Analyticsによるアクセス解析機能が動作するようになります．</p>
+
+<p>初期設定は0(使用しない)となっています．</p>
+
+<h3><a name="user-content-ca_entry" class="anchor" href="#ca_entry" aria-hidden="true"><span class="octicon octicon-link"></span></a>CA_entry</h3>
+
+<p>カテゴリー記事リストにおける，エントリーの表示方法を設定します．0でエントリーの本文までを表示，1でヘッドライン方式による概要のみの表示となります．</p>
+
+<p>初期設定は0(エントリーの本文までを表示)となっています．</p>
+
+<h3><a name="user-content-da_entry" class="anchor" href="#da_entry" aria-hidden="true"><span class="octicon octicon-link"></span></a>DA_entry</h3>
+
+<p>月別記事リストにおける，エントリーの表示方法を設定します．0でエントリーの本文までを表示，1でヘッドライン方式による概要のみの表示となります．</p>
+
+<p>初期設定は0(エントリーの本文までを表示)となっています．</p>
+
+<p>なお，この月別記事リストについては，アーカイブマッピングの追加により年別記事リストにも使用できるようになっていますが，年別記事リストでのエントリーの表示については，ヘッドライン方式固定となっています．</p>
+
+<h3><a name="user-content-snsb" class="anchor" href="#snsb" aria-hidden="true"><span class="octicon octicon-link"></span></a>snsb</h3>
+
+<p>ブログ記事でのヘッダー部分(<code>&lt;ul class="info"&gt;</code>)内で，各SNS用のボタンを使用する・使用しないを設定します．0で使用しない，1で使用するようにします．</p>
+
+<p>初期設定は0(使用しない)となっています．</p>
+
+<p>なお，ここでは後述のb***変数の内容をチェックしている訳ではありませんので，使用する場合には必ず後述のb***変数のいずれかを0以外にしておく必要があります．</p>
+
+<h3><a name="user-content-fbadmin" class="anchor" href="#fbadmin" aria-hidden="true"><span class="octicon octicon-link"></span></a>fbadmin</h3>
+
+<p>Facebookのアカウントを持っている人で，外部ブログとの連携機能を使用したい方は，この変数にご自身のFacebook Adminsを指定します．この変数が0以外の場合にのみ，HTMLソースのhead内(メインページとブログ記事のみ)でマイクロメタデータが登録されるようになっています．</p>
+
+<p>初期設定は0(Facebook Admins なし)となっています．</p>
+
+<h3><a name="user-content-bfbap" class="anchor" href="#bfbap" aria-hidden="true"><span class="octicon octicon-link"></span></a>bfbap</h3>
+
+<p>Facebookのアカウントを持っている人で，かつFacebookの「いいね」ボタンを設置する場合に，必須となるご自身のFacebook AppIDを指定します．この変数が0以外の場合にのみ，ブログ記事にFacebookの「いいね」ボタンが表示されるようになります．</p>
+
+<p>初期設定は0(Facebook AppID なし)となっています．</p>
+
+<p>ただし，私自身Facebookアカウントを持っていませんので動作確認を行うことができません．もし不具合がありましたら報告していただけると助かります．</p>
+
+<h3><a name="user-content-btwit" class="anchor" href="#btwit" aria-hidden="true"><span class="octicon octicon-link"></span></a>btwit</h3>
+
+<p>twitterのアカウントを持っている人で，かつtweetボタンを設置する場合に，自身のtwitterアカウントを指定します．
+この変数が0以外の場合にのみ，ブログ記事にtweetボタンが表示されるようになります．</p>
+
+<p>初期設定は0(twitterアカウント無し)となっています．</p>
+
+<h3><a name="user-content-bgpls" class="anchor" href="#bgpls" aria-hidden="true"><span class="octicon octicon-link"></span></a>bgpls</h3>
+
+<p>Google +1ボタンを設置する・設置しないを指定します．0だと設置しない，1で設置するとなります．</p>
+
+<p>初期設定は0(設置しない)となっています．</p>
+
+<h3><a name="user-content-bhatb" class="anchor" href="#bhatb" aria-hidden="true"><span class="octicon octicon-link"></span></a>bhatb</h3>
+
+<p>はてなブックマークボタンを設置する・設置しないを指定します．0だと設置しない，1で設置するとなります．</p>
+
+<p>初期設定は0(設置しない)となっています．</p>
+
+<h3><a name="user-content-bmixi" class="anchor" href="#bmixi" aria-hidden="true"><span class="octicon octicon-link"></span></a>bmixi</h3>
+
+<p>mixiのアカウントを持っている人で，かつmixi「イイネ」ボタンを設置する場合に，必須となるご自身のmixiデベロッパーIDを指定します．この変数が0以外の場合にのみ，ブログ記事にmixi「イイネ」ボタンが表示されるようになります．</p>
+
+<p>初期設定は0(mixiデベロッパーIDなし)となっています．</p>
+
+<p>ただし，私自身mixiアカウントはありますが，デベロッパーIDは取得していないので動作確認を行うことができません(さすがに本名晒して取得までは…ということで，できないでいるだけだったりしますが(^^;)．もし不具合がありましたら報告していただけると助かります．</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">mt.Vicuna HTML5 theme maintained by <a href="https://github.com/HashiM-Git">HashiM-Git</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
