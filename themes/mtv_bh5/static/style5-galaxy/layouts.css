@@ -1,0 +1,781 @@
+@charset "UTF-8";
+
+/*
+Skin Name: Galaxy Skin - Layout Module
+Author: vicuna.jp
+
+Layout Class: single, double, double-l, multi, multi2, multi2-l
+Eye Cach Class: eye-h, eye-hb, eye-m, eye-c
+SP Class: multi eye-c set1, multi2 eye-c set2
+Fixed Width Class: f800, f850, f900, f950, f1000
+Other Class: gt, al
+*/
+
+body {
+	margin: 0 8px;
+	text-align: center;
+}
+
+/*========================================
+	Eye Catch
+========================================*/
+/* Header - <body class="eye-h">
+---------------*/
+
+body.eye-h #header {
+	height: 180px;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-h #header h1.siteName {
+	margin: 0;
+	position: absolute;
+	top: 50px;
+	left: 30px;
+}
+
+body.eye-h #header p.description {
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	left: 30px;
+}
+
+body.eye-h #globalNavi {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+/* Header Banner - <body class="eye-hb">
+---------------*/
+
+body.eye-hb #header {
+	padding-top: 0;
+}
+
+body.eye-hb #header h1.siteName {
+	margin: 0;
+}
+
+body.eye-hb #header h1.siteName a {
+	height: 180px;
+	display: block;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+body.eye-hb #header p.description {
+	display: none;
+}
+
+/* Content - <body class="eye-c">
+---------------*/
+
+body.eye-c #content {
+	padding-top: 180px;
+	border-top: none;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+}
+
+body.eye-c #utilities div.navi {
+	top: auto;
+}
+
+/* Main - <body class="eye-m">
+---------------*/
+
+body.eye-m #content {
+	border-top: none;
+}
+
+body.eye-m #main {
+	padding-top: 180px;
+	background-image: url(images/eyecatch/image1.png);
+	background-repeat: no-repeat;
+}
+
+/* No Centering - <body class="al">
+---------------*/
+
+body.al {
+	margin: 0;
+	text-align: left;
+}
+
+body.al #header,
+body.al #content,
+body.al #footer {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+@media screen and (max-width:480px) {
+
+  body {
+	margin: 0 4px;
+	font-size: 150%;
+	line-height: 1.8;
+  }
+
+  #header, #content,
+  #footer {
+	width: 98%; /*(60%‾ | 600px‾ | 60em‾) etc.*/
+	margin: 0 auto;
+	position: relative;
+  }
+
+  #content {
+	text-align: left;
+  }
+
+  ul#flip1 {
+	margin: 0 1%;
+	width: 98%;
+  }
+
+  ul#flip1 li {
+	margin:0;
+	width: 50%;
+	font-size: 102%;
+	line-height: 1.2;
+  }
+
+  ul#flip1 li a {
+	display: block;
+	position: relative;
+	padding-top: 1.2em;
+	padding-bottom: 0;
+	height: 40px;
+  }
+
+  ul#flip1 li a:after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	width: 8px;
+	height: 8px;
+	margin: -6px 0 0;
+	border-top: solid 3px #fff;
+	border-right: solid 3px #fff;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+
+  ul#flip1 li.older a:after {
+	right: 0px;
+	left: 10px;
+	border-left: solid 3px #fff;
+	border-right: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  }
+
+  ul#flip1 li.create-entry {
+	width: 100%;
+	font-size: 102%;
+  }
+
+  ul#flip1 li.create-entry a {
+	padding-left: 0;
+	background-image: none;
+  }
+
+  div.entry,
+  article.entry {
+	margin: 0 15px;
+	padding: 1px 0;
+	_height: 1px; /* for IE6 */
+	*min-height: 1px; /* for IE7 */
+  }
+
+  article.entry ul.info,
+  .archives div.entry ul.info,
+  .system div.entry ul.info {
+	margin: 0 -15px 1em;
+	padding: 0.3em 15px;
+  }
+
+  article.entry ul.info li,
+  .archives div.entry ul.info li,
+  .system div.entry ul.info li {
+	float: none;
+	display: inline;
+  }
+
+  #trackback ul li { display: block; }
+  .entry > .section h1 {
+	margin-right: 0;
+	padding-right: 0;
+  }
+
+  .entry > .section h1 a {
+	display: block;
+	margin: 0;
+	padding: 0.2em;
+  }
+
+  .entry > .section h1 a:hover {
+	text-decoration: none;
+  }
+
+  .headlbox > div.entry-sect {
+	border: 0;
+  }
+
+  article.section .textBody,
+  article.section footer,
+  .headlbox > p.ccount,
+  .headlbox > div.lcomment,
+  #utilities .categoryArchives .icon-entry,
+  #utilities .categoryArchives .icon-comment {
+	display: none;
+  }
+
+  #utilities .recentEntries ul,
+  #utilities .categoryArchives ul,
+  #utilities .monthlyArchives ul,
+  #utilities .y-mArchives ul,
+  #utilities aside .links ul {
+	margin: 3px 5px!important;
+	list-style: none;
+  }
+
+  #utilities .y-mArchives ul.mlist li {
+	display: block!important;
+  }
+
+  #utilities .recentEntries ul li a,
+  #utilities .categoryArchives ul li a,
+  #utilities .monthlyArchives ul li a,
+  #utilities .y-mArchives ul li:last-child a,
+  #utilities .y-mArchives ul.mlist li a,
+  #utilities aside .links ul li a {
+	position: relative;
+	display: block;
+	border-bottom: solid 1px;
+	padding: 5px 1em 0 4px;
+	height: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+
+  #utilities aside .links ul li a {
+	padding-left: 20px;
+  }
+
+  #utilities .categoryArchives ul li.create-entry a {
+	padding-left: 30px;
+  }
+
+  #utilities .recentEntries ul li a:after,
+  #utilities .categoryArchives ul li a:after,
+  #utilities .monthlyArchives ul li a:after,
+  #utilities .y-mArchives ul li:last-child a:after,
+  #utilities .y-mArchives ul.mlist li a:after,
+  #utilities aside .links ul li a:after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	width: 0;
+	height: 0;
+	margin: -8px 0 0;
+	border-top: solid 10px #fff;
+	border-left: solid 10px transparent;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+
+  #utilities aside .links ul li a:after {
+	left: 0;
+	border-top: solid 10px #fdf;
+  }
+
+  body.member .entry > .member {
+	margin: 1.5em 1em;
+	width: auto;
+	height: 64px;
+	float: none;
+	clear: both;
+  }
+
+  body.member .entry > .member p {
+	float: left;
+	width: 55px;
+	margin: 0 2px 2px 0;
+  }
+
+  body.member .entry > .member ul {
+	margin: 0 0.5em;
+	float: left;
+	list-style-type: none;
+  }
+
+  body.eye-h #header {
+	height: auto;
+  }
+
+  body.eye-h #header h1.siteName,
+  body.eye-h #header p.description,
+  body.eye-h #globalNavi {
+	position: static;
+  }
+
+  body.eye-h #header h1.siteName {
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+  }
+
+  body.eye-h #header p.description {
+	margin-bottom: 2.5em;
+  }
+}
+
+@media screen and (min-width:481px) {
+
+  #header, #content,
+  #footer {
+	width: 95%; /*(60%‾ | 600px‾ | 60em‾) etc.*/
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+  }
+
+  body.gt #header {
+	padding-top: 30px;
+	background-position: left bottom;
+  }
+
+  body.gt #globalNavi ul {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: auto;
+  }
+}
+
+@media screen and (min-width:481px) and (max-width:839px) {
+
+  #globalNavi ul {
+	width: 100%;
+  }
+
+  #globalNavi ul li {
+	width: 33.33%;
+  }
+
+  h1 {
+	border-bottom: none;
+  }
+
+  #utilities {
+	margin: 10px 10px;
+  }
+
+  #utilities div {
+	margin: 0;
+  }
+
+  #utilities div.navi {
+	margin-left: 2%;
+	border: 1px solid #222;
+	float: left;
+	width: 47%;
+	display: inline; /* for IE6 */
+  }
+
+  #utilities div.others {
+	margin-right: 2%;
+	border: 1px solid #222;
+	float: right;
+	clear: right;
+	width: 47%;
+	display: inline; /* for IE6 */
+  }
+
+  #utilities ul.thumb li {
+	width: 20%;
+  }
+
+  #utilities {
+	_height: 1px;
+	min-height: 1px;
+	/*¥*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+  }
+
+  #utilities:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+  }
+}
+
+@media screen and (min-width:840px) {
+/*========================================
+	Single Column Layout
+	<body class="single">
+	┏━━━┓
+	┃━━━┃
+	┣━┳━┫
+	┗━┻━┛
+========================================*/
+
+  body.single h1 {
+	border-bottom: none;
+  }
+
+  body.single #utilities {
+	margin: 10px 10px;
+  }
+
+  body.single #utilities div {
+	margin: 0;
+  }
+
+  body.single #utilities div.navi {
+	margin-left: 2%;
+	border: 1px solid #222;
+	float: left;
+	width: 47%;
+	display: inline; /* for IE6 */
+  }
+
+  body.single #utilities div.others {
+	margin-right: 2%;
+	border: 1px solid #222;
+	float: right;
+	clear: right;
+	width: 47%;
+	display: inline; /* for IE6 */
+  }
+
+  body.single #utilities ul.thumb li {
+	width: 20%;
+  }
+
+  body.single #utilities {
+	_height: 1px;
+	min-height: 1px;
+	/*¥*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+  }
+
+  body.single #utilities:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+  }
+
+/*========================================
+	Double Column Layout - Sidebar on right
+	<body class="double">
+	┏━━━┓┏┓
+	┃━━━┃┃┃
+	┗━━━┛┗┛
+========================================*/
+
+  body.double #main {
+	width: 75%;
+	float: left;
+	margin-right: -1px;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+  }
+
+  body.double #utilities {
+	width: 25%;
+	float: left;
+	clear: right;
+  }
+
+/*========================================
+	Double Column Layout - Sidebar on left
+	<body class="double-l">
+	┏┓┏━━━┓
+	┃┃┃━━━┃
+	┗┛┗━━━┛
+========================================*/
+
+  body.double-l #main {
+	width: 75%;
+	float: right;
+	margin-left: -1px;
+	border-left: 1px solid #222;
+	border-bottom: 1px solid #222;
+  }
+
+  body.double-l #utilities {
+	width: 25%;
+	float: right;
+	clear: left;
+  }
+
+/*========================================
+	Multi Column Layout - Wing
+	! Negative Margin Layout
+	<body class="multi">
+	┏┓┏━━┓┏┓
+	┃┃┃━━┃┃┃
+	┗┛┗━━┛┗┛
+========================================*/
+
+  body.multi #main {
+	margin-right: -180px;
+	float: left;
+	width: 100%;
+	background-position: 180px 0; /* for body.eye-c */
+  }
+
+  body.multi #main > * {
+	margin-left: 210px;
+	margin-right: 210px;
+  }
+
+  body.multi #main p.topicPath,
+  body.multi #main ul#flip1,
+  body.multi #main div.entry,
+/* body.multi #main p.archives, */
+  body.multi #main div.freeSpace {
+	margin-left: 210px;
+	margin-right: 210px;
+  }
+
+  body.multi #main > h1 {
+	margin-left: 180px;
+	margin-right: 180px;
+  }
+
+  body.multi article.headline > h1,
+  body.multi .entry > .section h1,
+  body.multi #comments > h1,
+  body.multi #trackback > h1 {
+	margin-left: 0;
+	margin-right: 0;
+  }
+
+  body.multi #utilities {
+	float: right;
+	clear: right;
+	width: 180px;
+  }
+
+  body.multi #utilities div.navi {
+	margin: 0;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	width: 180px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #303030;
+  }
+
+  body.multi #utilities div.others {
+	margin-top: 0;
+	padding: 1px 0 5px;
+	border-left: 1px solid #222;
+	border-bottom: 1px solid #222;
+	background-color: #303030;
+  }
+
+/*========================================
+	Multi Column Layout - Double sidebar R
+	<body class="multi2">
+	┏━━┓┏┓┏┓
+	┃━━┃┃┃┃┃
+	┗━━┛┗┛┗┛
+========================================*/
+
+  body.multi2 #main {
+	margin-right: -1px;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	float: left;
+	width: 55%;
+  }
+
+  body.multi2 #utilities {
+	float: right;
+	clear: right;
+	width: 45%;
+  }
+
+  body.multi2 #utilities div.navi {
+	margin: 0;
+	float: left;
+	width: 50%;
+  }
+
+  body.multi2 #utilities div.navi section h1,
+  body.multi2 #utilities dl.navi section div,
+  body.multi2 #utilities div.navi aside h1,
+  body.multi2 #utilities dl.navi aside div {
+	margin-right: 0;
+  }
+
+  body.multi2 #utilities div.others {
+	margin: 0;
+	float: left;
+	clear: right;
+	width: 50%;
+	_width: auto; /* for IE6 */
+  }
+
+/*========================================
+	Multi Column Layout - Double sidebar L
+	<body class="multi2-l">
+	┏┓┏┓┏━━┓
+	┃┃┃┃┃━━┃
+	┗┛┗┛┗━━┛
+========================================*/
+
+  body.multi2-l #main {
+	margin-left: -1px;
+	border-left: 1px solid #222;
+	border-bottom: 1px solid #222;
+	float: right;
+	width: 55%;
+  }
+
+  body.multi2-l #utilities {
+	float: left;
+	clear: left; 
+	width: 45%;
+  }
+
+  body.multi2-l #utilities div.navi {
+	margin-top: 0;
+	float: left;
+	width: 50%;
+  }
+
+  body.multi2-l #utilities div.navi section h1,
+  body.multi2-l #utilities div.navi section div,
+  body.multi2-l #utilities div.navi aside h1,
+  body.multi2-l #utilities div.navi aside div {
+	margin-right: 0;
+  }
+
+  body.multi2-l #utilities div.others {
+	margin-top: 0;
+	float: left;
+	width: 50%;
+	clear: right;
+	_width: auto; /* for IE6 */
+  }
+
+/*========================================
+	Special Layout set
+========================================*/
+/* <body class="multi eye-c set1">
+---------------*/
+
+  body.set1 #utilities div.navi {
+	top: 0;
+  }
+
+  body.set1 #content {
+	background-position: 180px 0;
+  }
+
+/* <body class="multi2 eye-c set2">
+---------------*/
+
+  body.set2 #utilities {
+	position: absolute;
+	top: 0;
+	right: 0;
+  }
+
+  body.set2 #utilities div.navi {
+	float: right;
+	background-color: #303030;
+  }
+
+  body.set2 #utilities div.navi section h1,
+  body.set2 #utilities duv.navi section div,
+  body.set2 #utilities div.navi aside h1,
+  body.set2 #utilities duv.navi aside div {
+	margin-right: 5px;
+  }
+
+  body.set2 #utilities div.others {
+	margin-top: 180px;
+	float: left;
+	clear: left;
+  }
+
+  body.set2 #utilities div.others section h1,
+  body.set2 #utilities div.others section div,
+  body.set2 #utilities div.others aside h1,
+  body.set2 #utilities div.others aside div {
+	margin-right: 0;
+  }
+
+/* Fixed 800px - <body class="f800">
+---------------*/
+
+  body.f800 #header,
+  body.f800 #content,
+  body.f800 #footer {
+	width: 800px;
+  }
+
+/* Fixed 850px - <body class="f850">
+---------------*/
+
+  body.f850 #header,
+  body.f850 #content,
+  body.f850 #footer {
+	width: 850px;
+  }
+
+/* Fixed 900px - <body class="f900">
+---------------*/
+
+  body.f900 #header,
+  body.f900 #content,
+  body.f900 #footer {
+	width: 900px;
+  }
+
+/* Fixed 950px - <body class="f950">
+---------------*/
+
+  body.f950 #header,
+  body.f950 #content,
+  body.f950 #footer {
+	width: 950px;
+  }
+
+/* Fixed 1000px - <body class="f1000">
+---------------*/
+
+  body.f1000 #header,
+  body.f1000 #content,
+  body.f1000 #footer {
+	width: 1000px;
+  }
+}

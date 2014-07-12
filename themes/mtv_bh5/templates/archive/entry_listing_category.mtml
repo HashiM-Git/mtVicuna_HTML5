@@ -1,0 +1,45 @@
+<MTSetVars>
+	page_column=double
+	page_title=<$MTArchiveTitle$> Archive
+	tempName=index_archive_category
+</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
+<!DOCTYPE html>
+<html lang="<$MTDefaultLanguage$>">
+  <head>
+    <meta charset="<$MTPublishCharset$>">
+<MTIf tag="CategoryDescription">    <meta name="description" content="<$MTCategoryDescription remove_html="1"$>"></MTIf>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <link rel="canonical" href="<$MTArchiveLink$>">
+<MTIf name="datebased_archive">
+<MTArchivePrevious>    <link rel="prev" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchivePrevious>
+<MTArchiveNext>    <link rel="next" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchiveNext>
+</MTIf>
+<$MTCCLicenseRDF$>
+    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <$MTInclude module="<__trans phrase="Google Analytics">"$>
+  </head>
+  <body class="category <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+    <$MTInclude module="<__trans phrase="Header">"$>
+    <div id="content">
+      <div id="main">
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <h1><$MTGetVar name="page_title"$></h1>
+        <div class="entry"><$MTCategoryCount setvar="limit"$>
+<MTEntries sort_order="$entry" limit="$limit">
+	<MTIf name="entry_sh">
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+	<MTElse>
+          <$MTInclude module="<__trans phrase="Entry Summary">"$>
+	</MTIf>
+</MTEntries>
+          <$MTInclude module="<__trans phrase="Archive Index Link">"$>
+        </div>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+      </div>
+      <!-- end div#main -->
+      <$MTInclude module="<__trans phrase="Utilities">"$>
+    </div>
+    <!-- end div#content -->
+    <$MTInclude module="<__trans phrase="Footer">"$>
+  </body>
+</html>
