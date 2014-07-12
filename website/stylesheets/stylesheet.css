@@ -131,6 +131,7 @@ em {
 
 strong {
   font-weight: bold;
+  color: #ffa1d5;
 }
 
 img {
@@ -161,10 +162,8 @@ pre, code {
   width: 100%;
   color: #222;
   background-color: #fff;
-
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
-
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -194,7 +193,6 @@ blockquote {
   padding: 0 0 0 20px;
   border-left: 3px solid #bbb;
 }
-
 
 ul, ol, dl {
   margin-bottom: 15px
@@ -264,7 +262,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 90%;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -303,6 +301,11 @@ Full-Width Styles
   font-size: 42px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
+}
+
+#project_title a:link {
+  color: #ffe4b5;
+  text-decoration: underline;
 }
 
 #project_tagline {
