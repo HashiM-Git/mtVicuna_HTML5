@@ -131,7 +131,7 @@ em {
 
 strong {
   font-weight: bold;
-  color: #ffa1d5;
+  color: #da052b;
 }
 
 img {
@@ -262,7 +262,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 90%;
+  max-width: 80%;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -303,9 +303,8 @@ Full-Width Styles
   text-shadow: #111 0px 0px 10px;
 }
 
-#project_title a:link {
+#project_title a {
   color: #ffe4b5;
-  text-decoration: underline;
 }
 
 #project_tagline {
