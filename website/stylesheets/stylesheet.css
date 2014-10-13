@@ -354,6 +354,18 @@ Full-Width Styles
   background: url(../images/sprite_download.png) no-repeat top right;
 }
 
+.navi { margin: 30px -20px 0; }
+
+.navi li {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 120%;
+  margin-right: 20px;
+  color: #ccccff;
+}
+
+.navi li a { color: #ccccff; }
+
 #main_content_wrap {
   background: #f2f2f2;
   border-top: 1px solid #111;
