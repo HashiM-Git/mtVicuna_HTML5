@@ -32,8 +32,8 @@
           <h2 id="project_tagline">mt.Vicuna HTML5 themeの専用ページとなります．</h2>
 
             <div id="downloads">
-              <a class="zip_download_link" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5/archive/v1.0.1.zip">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5/archive/v1.0.1.tar.gz">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5/archive/v1.0.2.zip">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/HashiM-Git/mt-theme-mtVicuna-HTML5/archive/v1.0.2.tar.gz">Download this project as a tar.gz file</a>
             </div>
 
             <ul class="navi">
@@ -60,23 +60,29 @@
 
 <h2>設定項目と設定方法について</h2>
 
-<p>まず，全般設定テンプレートを開くと，先頭から10行ぐらいにわたって，以下の様な設定が並んでいると思います．</p>
+<p>まず，全般設定テンプレートを開くと，先頭から15行ぐらいにわたって，以下の様な設定が並んでいると思います．</p>
 
 <pre><code>&lt;MTSetVars&gt;
-    jquery=1
-    eyech=0
-    TagC_num=0
-    PostName=1
-    GLNavi=1
-    Others=0
-    CA_entry=0,0
-    DM_entry=0,0
+	jquery=1
+	TagC_num=0
+	PostName=1
+	GLNavi=1
+	Others=0
 
-    DY_entry=1,1
+	MDtopic=1,0,1,0
 
-    GA_trackid=0
-    fbadmin=0
-    button=0,0,0,0,0
+	IMindex=2,0
+	IAindex=1,0
+	A_entry=1,0
+	A_webpg=1,0
+	A_catlt=2,0,0,0
+	A_mdatb=2,0,0,0
+
+	DY_entry=1,1
+
+	GA_trackid=0
+	fbadmin=0
+	button=0,0,0,0,0
 &lt;/MTSetVars&gt;
 </code></pre>
 
@@ -92,31 +98,16 @@
 
 <p>初期設定では1(使用する)となっています．</p>
 
-<h3><a name="user-content-eyech" class="anchor" href="#eyech" aria-hidden="true"><span class="octicon octicon-link"></span></a>eyech</h3>
-
-<p>mt.Vicunaテンプレート内で<code>&lt;body&gt;</code>タグで使われるアイキャッチクラスの設定をします．</p>
-
-<ul>
-<li>0: 使用しない</li>
-<li>1: ヘッダー部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-h"&gt;</code>)</li>
-<li>2: ヘッダー部分にハイパーリンクとしてのアイキャッチ画像を適用する(<code>&lt;body class="eye-hb"&gt;</code>)</li>
-<li>3: #contentの先頭部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-c"&gt;</code>)</li>
-<li>4: #mainの先頭部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-m"&gt;</code>)</li>
-<li>5: #utilitiesの直前部分にアイキャッチ画像を適用する(<code>&lt;body class="eye-u"&gt;</code>)</li>
-</ul>
-<p>なお，5については，style5-futureとstyle5-bazooka限定のアイキャッチクラスとなっていまして，しかも2カラムの場合にしか適用されないようになっています．</p>
-
-<p>初期設定は0(使用しない)となっています．</p>
-
+<!--
 <p>アイキャッチとして使用する画像の登録方法については，インデックステンプレートのスタイルシート内に書かれていますが，アイテムとして画像を登録する際に，タグに「@eyech」とつけて再構築(登録)することにより，自動でアイキャッチ画像として指定するようになっています．</p>
 
-<p>ただし，eyech変数で1以上を指定して，なおかつ再構築がされていないと表示すらされませんので注意してください．</p>
+<p>ただし，eyech変数で1以上を指定して，なおかつ再構築がされていないと表示すらされませんので注意してください．</p> -->
 
 <h3><a name="user-content-jquery" class="anchor" href="#tagc_num" aria-hidden="true"><span class="octicon octicon-link"></span></a>TagC_num</h3>
 
 <p>ウィジェットテンプレートセット(ナビゲーション・その他)にてタグクラウドを使用している場合に，タグクラウドのスタイルを数値で指定します．</p>
 
-<p>数値は0から13までの数値が指定可能です．なお，0の場合はタグクラウドスタイルを使用しないようにしています．</p>
+<p>数値は0から13までの数値が指定可能です．数値ですので，「03」のように2桁にする必要はありません．なお，0の場合はタグクラウドスタイルを使用しないようにしています．</p>
 
 <p>初期設定は0(使用しない)となっています．</p>
 
@@ -152,7 +143,7 @@
 <li>set1</li>
 <li>set2</li>
 <li>al</li>
-<li>f800 〜 f1000(50ピクセル刻み)</li>
+<li>f800 ? f1000(50ピクセル刻み)</li>
 </ul>
 <p>初期設定は0(使用しない)となっていますが，使用するときは以下のように記述します．</p>
 
@@ -162,45 +153,112 @@
 
 <p>また，ここでset1やset2を指定している場合には，アイキャッチの指定とレイアウトの指定内容を確認し，条件に合致していない場合には該当文字のみを消去するようになっています．</p>
 
-<h3><a name="user-content-ca_entry" class="anchor" href="#ca_entry" aria-hidden="true"><span class="octicon octicon-link"></span></a>CA_entry</h3>
+<h3><a name="user-content-others" class="anchor" href="#mdtopic" aria-hidden="true"><span class="octicon octicon-link"></span></a>MDtopic</h3>
 
-<p>カテゴリー記事リストにおける「各エントリーの表示方法」と，「エントリーの並べ方」を同時に設定します．</p>
+<p>mt.Vicuna HTML5 ver.1.0.2より，トピックパスにマイクロデータを挿入することが可能となりました．このMDtopicは各アーカイブテンプレートのトピックパスにマイクロデータを挿入する・挿入しないのスイッチとなります．</p>
 
-<pre><code>CA_entry=エントリー表示方法(0or1),エントリーの並べ方(0or1)</code></pre>
-
-<p>区切り文字については半角カンマ(,)または半角スラッシュ(/)のみ有効です．</p>
-
-<ul>
-<li>エントリー表示方法は，0でエントリーの本文までを表示，1でヘッドライン方式による表示となります．</li>
-<li>エントリーの並べ方は，0で降順(新→古)，1で昇順(古→新)となります．</li>
-</ul>
-<p>初期設定は0,0(エントリーは本文まで表示，並べ方は降順)となっています．</p>
-
-<p>なお，表示方法，並べ方共に0または1しか選択肢がありません．<br>
-それ以外の文字列や数字等(半角スペースとか)を入れていた場合には，おそらく1と同じ扱いになると思われます．</p>
-
-<h3><a name="user-content-dm_entry" class="anchor" href="#dm_entry" aria-hidden="true"><span class="octicon octicon-link"></span></a>DM_entry</h3>
-
-<p>月別ブログ記事リストにおける「各エントリーの表示方法」と，「エントリーの並べ方」を同時に設定します．</p>
-
-<pre><code>DM_entry=エントリー表示方法(0or1),エントリーの並べ方(0or1)</code></pre>
+<pre><code>MDtopic=ブログ記事(個別エントリー),ウェブページ,カテゴリーリスト,年別月別リスト</code></pre>
 
 <p>区切り文字については半角カンマ(,)または半角スラッシュ(/)のみ有効です．</p>
 
-<ul>
-<li>エントリー表示方法は，0でエントリーの本文までを表示，1でヘッドライン方式による表示となります．</li>
-<li>エントリーの並べ方は，0で降順(新→古)，1で昇順(古→新)となります．</li>
-</ul>
-<p>初期設定は0,0(エントリーは本文まで表示，並べ方は降順)となっています．</p>
+<p>それぞれ，0で通常のトピックパス，1でマイクロデータの挿入されたトピックパスになるようにしています．</p>
 
-<p>なお，表示方法，並べ方共に0または1しか選択肢がありません．<br>
+<p>初期設定は1,0,1,0(個別エントリーとカテゴリーリストのトピックパスにのみマイクロデータを挿入)となっています．</p>
+
+<p>実は，トップページ・個別エントリー・ウェブページについては固有の記事扱いとしてページの情報やページ管理者等に関してのマイクロデータを入れていまして，通常Googleでの検索ではトピックパスにマイクロデータを埋め込まなくても問題なく階層表示される筈です．ただ，一応機能として入れる・入れないを選択できた方が良いと思いこうなりました(苦笑)．</p>
+
+<p>なお，トピックパスは各ページに2つ存在していますが，最初に表示されるトピックパスにのみマイクロデータが埋め込まれるようになっています．</p>
+
+
+<h3><a name="user-content-ca_entry" class="anchor" href="#IMindex" aria-hidden="true"><span class="octicon octicon-link"></span></a>IMindex, IAindex, A_entry, A_webpg</h3>
+
+<p>メインページ，アーカイブインデックス，個別エントリー，ウェブページのレイアウトとアイキャッチの有無を，各テンプレートごとに同時設定出来るようになっています．</p>
+
+<p>一応変数自体をわかりやすくしたかったので，メインページはIMindex，アーカイブインデックスはIAindex，個別エントリーはA_entry，ウェブページはA_webpgとしています．</p>
+
+<p>設定はどれも同じなので，IMindexで説明してしまいますが…</p>
+<pre><code>IMindex=ページレイアウト(1,2,L2,3,R3,L3),アイキャッチ(0～5)</code></pre>
+
+<p>…このようになっていまして，区切り文字については半角カンマ(,)または半角スラッシュ(/)のみ有効です．</p>
+
+<p>まずページレイアウトですが，以下の値が設定可能です．</p>
+<ul>
+ <li>1: シングルレイアウト(single)</li>
+ <li>2: ダブルレイアウト(double)</li>
+ <li>L2: ダブルレイアウトでサイドバーが左(double-l)</li>
+ <li>3: 3カラムレイアウトでサイドバーが左右(multi)</li>
+ <li>R3: 3カラムレイアウトでサイドバーが右(multi2)</li>
+ <li>L3: 3カラムレイアウトでサイドバーが左(multi2-l)</li>
+</ul>
+<p>これ以外の文字列を入れた場合は，シングルレイアウトと認識されるようになっています．</p>
+
+<p>次にアイキャッチですが，以下の値が設定可能です．</p>
+
+<ul>
+<li>0: 使用しない</li>
+<li>1: ヘッダー部分にアイキャッチ画像を適用する(eye-h)</li>
+<li>2: ヘッダー部分にハイパーリンクとしてのアイキャッチ画像を適用する(eye-hb)</li>
+<li>3: #contentの先頭部分にアイキャッチ画像を適用する(eye-c)</li>
+<li>4: #mainの先頭部分にアイキャッチ画像を適用する(eye-m)</li>
+<li>5: #utilitiesの直前部分にアイキャッチ画像を適用する(eye-u)</li>
+</ul>
+
+<p>なお，5については，style5-futureとstyle5-bazooka限定のアイキャッチクラスとなっていまして，しかも2カラムの場合にしか適用されないようになっています．</p>
+
+<p>初期値は…流石に多くて書ききれないのですが，要約すると，メインインデックスはダブルレイアウトでアイキャッチなし(2,0)，他はシングルレイアウトでアイキャッチなし(1,0)が初期設定となっています．</p>
+
+<p>レイアウト，アイキャッチの解説については，<a href="http://kita2.net/stylelib/">スタイルライブラリ</a>内の<a href="http://kita2.net/stylelib/sub/layouts.php">レイアウトについて</a>を見ていただければ判ります．</p>
+
+
+<h3><a name="user-content-ca_entry" class="anchor" href="#a_catlt" aria-hidden="true"><span class="octicon octicon-link"></span></a>A_catlt, A_mdatb</h3>
+
+<p>カテゴリーリスト，月別リストにおけるレイアウトとアイキャッチの有無，あとエントリーの表示方法とエントリーの並べ方を同時に設定します．</p>
+
+<p>こちらについても変数自体をわかりやすくしたかったので，カテゴリーリストはA_catlt，月別リストはA_mdatbとしています．</p>
+
+<p>設定はどれも同じなので，A_catltで説明してしまいますが…</p>
+<pre><code>A_catlt=ページレイアウト(1,2,L2,3,R3,L3),アイキャッチ(0～5),エントリー表示方法(0or1),エントリーの並べ方(0or1)</code></pre>
+
+<p>…このようになっていまして，区切り文字については半角カンマ(,)または半角スラッシュ(/)のみ有効です．</p>
+
+<p>まずページレイアウトですが，以下の値が設定可能です．</p>
+<ul>
+ <li>1: シングルレイアウト(single)</li>
+ <li>2: ダブルレイアウト(double)</li>
+ <li>L2: ダブルレイアウトでサイドバーが左(double-l)</li>
+ <li>3: 3カラムレイアウトでサイドバーが左右(multi)</li>
+ <li>R3: 3カラムレイアウトでサイドバーが右(multi2)</li>
+ <li>L3: 3カラムレイアウトでサイドバーが左(multi2-l)</li>
+</ul>
+<p>これ以外の文字列を入れた場合は，シングルレイアウトと認識されるようになっています．</p>
+
+<p>次にアイキャッチですが，以下の値が設定可能です．</p>
+
+<ul>
+<li>0: 使用しない</li>
+<li>1: ヘッダー部分にアイキャッチ画像を適用する(eye-h)</li>
+<li>2: ヘッダー部分にハイパーリンクとしてのアイキャッチ画像を適用する(eye-hb)</li>
+<li>3: #contentの先頭部分にアイキャッチ画像を適用する(eye-c)</li>
+<li>4: #mainの先頭部分にアイキャッチ画像を適用する(eye-m)</li>
+<li>5: #utilitiesの直前部分にアイキャッチ画像を適用する(eye-u)</li>
+</ul>
+
+<p>なお，5については，style5-futureとstyle5-bazooka限定のアイキャッチクラスとなっていまして，しかも2カラムの場合にしか適用されないようになっています．</p>
+
+<p>エントリー表示方法は，0でエントリーの本文までを表示，1でヘッドライン方式による表示となります．</p>
+
+<p>エントリーの並べ方は，0で降順(新→古)，1で昇順(古→新)となります．</p>
+
+<p>初期設定はどちらも2,0,0,0(ダブルレイアウト，アイキャッチなし，エントリーは本文まで表示，並べ方は降順)となっています．</p>
+
+<p>なお，表示方法，並べ方については0または1しか選択肢がありません．<br>
 それ以外の文字列や数字等(半角スペースとか)を入れていた場合には，おそらく1と同じ扱いになると思われます．</p>
 
 
 <h3><a name="user-content-dy_entry" class="anchor" href="#dy_entry" aria-hidden="true"><span class="octicon octicon-link"></span></a>DY_entry</h3>
 
 <p>ブログ記事リスト(年別・月別)の「設定」においてアーカイブマッピングを追加し，年別ブログ記事リストを使用している場合にのみ有効となるものです．<br>
-ここでは先程の月別ブログ記事リストの場合とは違い，年別ブログ記事リストにおける「各エントリーの表示時の，月毎のグルーピングの有無」と，「エントリーの並べ方」を同時に設定します．</p>
+ここでは年別ブログ記事リストにおける「各エントリーの表示時の，月毎のグルーピングの有無」と「エントリーの並べ方」を同時に設定します．</p>
 
 <pre><code>DY_entry=月毎のグルーピングの有無(0or1),エントリーの並べ方(0or1)</code></pre>
 
@@ -215,7 +273,8 @@
 <p>なお，表示方法，並べ方共に0または1しか選択肢がありません．<br>
 それ以外の文字列や数字等(半角スペースとか)を入れていた場合には，おそらく1と同じ扱いになると思われます．</p>
 
-<p>あと，年別ブログ記事リストでのエントリー表示については，ヘッドライン方式固定となっています．</p>
+<p>この年別ブログ記事リストですが，レイアウトやアイキャッチについてはアーカイブインデックスの設定を引き継ぐようにしています．<br>
+エントリー表示については，ヘッドライン方式固定です．</p>
 
 
 <h3><a name="user-content-ga_trackid" class="anchor" href="#ga_trackid" aria-hidden="true"><span class="octicon octicon-link"></span></a>GA_trackid</h3>
